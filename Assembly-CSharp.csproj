@@ -65,9 +65,10 @@
     <Compile Include="Assets\Scripts\Battery.cs" />
     <Compile Include="Assets\Scripts\bullet.cs" />
     <Compile Include="Assets\Scripts\Fire.cs" />
+    <Compile Include="Assets\Scripts\FireP2.cs" />
     <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
+    <Compile Include="Assets\Scripts\player2.cs" />
     <Compile Include="Assets\Scripts\targets.cs" />
-    <Compile Include="Assets\wheels.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/dingruizhang/New Unity Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

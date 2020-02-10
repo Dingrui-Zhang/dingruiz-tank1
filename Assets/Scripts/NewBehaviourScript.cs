@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
+    private Vector3 O_position;
+    private Quaternion O_rotation;
+    public Transform gun;
+
     // Start is called before the first frame update
     void Start()
     {
-        //transform.position += Vector3.up * 10.0f;
+        O_position = transform.position;
+        O_rotation = transform.rotation;
+
     }
 
     // Update is called once per frame
@@ -23,26 +29,41 @@ public class NewBehaviourScript : MonoBehaviour
             transform.position -= transform.forward * 2f * Time.deltaTime;
         }
 
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            transform.Rotate(0, -90, 0);
+        }
+
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            transform.Rotate(0, 90, 0);
+        }
+
         if (Input.GetKey(KeyCode.A))
         {
-            transform.position -= transform.right * 2f * Time.deltaTime;
+
+            transform.position += transform.forward * 2f * Time.deltaTime;
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            transform.position += transform.right * 2f * Time.deltaTime;
-        }
 
-        if (Input.GetKey(KeyCode.Q))
+            transform.position += transform.forward * 2f * Time.deltaTime;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.position != gun.position)
         {
-            transform.Rotate(0, (float)-.6, 0);
+            Reset();
         }
+    }
 
-        if (Input.GetKey(KeyCode.E))
-        {
-            transform.Rotate(0, (float).6, 0);
-        }
-
+    private void Reset()
+    {
+        transform.position = O_position;
+        transform.rotation = O_rotation;
     }
 
 

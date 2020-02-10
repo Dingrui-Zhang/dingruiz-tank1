@@ -13,16 +13,7 @@ public class Battery : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.Rotate(0, (float)-.8, 0);
-        }
-
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.Rotate(0, (float).8, 0);
-        }
-
+       
       
     }
 }
